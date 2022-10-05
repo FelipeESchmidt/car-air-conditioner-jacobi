@@ -26,13 +26,15 @@ const t = { width: 100, height: 42 };
 
 export const matriz = [
   geradorDeMatriz([12], t.height, t.width),
-  geradorDeMatriz([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], t.height, t.width),
-  geradorDeMatriz([1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], t.height, t.width),
-  geradorDeMatriz([1, 4, 5, 6, 7, 8, 9, 10, 11, 12], t.height, t.width),
-  geradorDeMatriz([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], t.height, t.width),
-  geradorDeMatriz([1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], t.height, t.width),
-  geradorDeMatriz([1, 4, 5, 6, 7, 8, 9, 10, 11, 12], t.height, t.width),
-  geradorDeMatriz([1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], t.height, t.width),
-  geradorDeMatriz([1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], t.height, t.width),
+  geradorDeMatriz([1], t.height, t.width),
+  geradorDeMatriz([1], t.height, t.width),
+  geradorDeMatriz([1], t.height, t.width),
+  geradorDeMatriz([1], t.height, t.width),
+  geradorDeMatriz([1], t.height, t.width),
+  geradorDeMatriz([1], t.height, t.width),
+  geradorDeMatriz([1], t.height, t.width),
+  geradorDeMatriz([1], t.height, t.width),
+  geradorDeMatriz([1], t.height, t.width),
+  geradorDeMatriz([1], t.height, t.width),
   geradorDeMatriz([12], t.height, t.width),
 ];
