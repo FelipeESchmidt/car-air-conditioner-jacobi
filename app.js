@@ -1,9 +1,10 @@
+import { jacobi } from "./jacobi.js";
 import { matriz } from "./matriz.js";
 
 let table = document.getElementById("tabela-principal");
 let botaoRender = document.getElementById("render");
 let inputRange = document.getElementById("layer");
-inputRange.setAttribute("max", matriz.length);
+inputRange.setAttribute("max", matriz.length - 1);
 
 class SelectFactory {
   selected = 0;
@@ -52,8 +53,10 @@ const renderNewTable = (m) => {
 };
 
 window.onload = () => {
+  let matrixUsed = matriz;
+
   const selectFac = new SelectFactory(matriz.length, (selection) => {
-    renderNewTable(matriz[selection]);
+    renderNewTable(matrixUsed[selection]);
   });
 
   inputRange.addEventListener("input", (e) => {
@@ -61,6 +64,7 @@ window.onload = () => {
   });
 
   botaoRender.addEventListener("click", () => {
+    matrixUsed = jacobi(matrixUsed);
     selectFac.callCallback();
   });
 };

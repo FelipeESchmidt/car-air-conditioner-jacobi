@@ -1,6 +1,6 @@
 import { carOutline } from "./carOutline.js";
 
-const isInsideCar = (x, y) => {
+export const isInsideCar = (x, y) => {
   if (carOutline[x]) {
     return y > carOutline[x][0] && y < carOutline[x][1];
   }
@@ -27,12 +27,12 @@ const t = { width: 100, height: 42 };
 export const matriz = [
   geradorDeMatriz([12], t.height, t.width),
   geradorDeMatriz([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], t.height, t.width),
-  geradorDeMatriz([2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], t.height, t.width),
-  geradorDeMatriz([3, 4, 5, 6, 7, 8, 9, 10, 11, 12], t.height, t.width),
+  geradorDeMatriz([1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], t.height, t.width),
+  geradorDeMatriz([1, 4, 5, 6, 7, 8, 9, 10, 11, 12], t.height, t.width),
   geradorDeMatriz([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], t.height, t.width),
-  geradorDeMatriz([2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], t.height, t.width),
-  geradorDeMatriz([3, 4, 5, 6, 7, 8, 9, 10, 11, 12], t.height, t.width),
-  geradorDeMatriz([2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], t.height, t.width),
+  geradorDeMatriz([1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], t.height, t.width),
+  geradorDeMatriz([1, 4, 5, 6, 7, 8, 9, 10, 11, 12], t.height, t.width),
+  geradorDeMatriz([1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], t.height, t.width),
   geradorDeMatriz([1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], t.height, t.width),
   geradorDeMatriz([12], t.height, t.width),
 ];
