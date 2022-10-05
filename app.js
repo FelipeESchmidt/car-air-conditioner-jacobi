@@ -1,8 +1,9 @@
 import { matriz } from "./matriz.js";
 
 let table = document.getElementById("tabela-principal");
-let botao = document.getElementById("next");
 let botaoRender = document.getElementById("render");
+let inputRange = document.getElementById("layer");
+inputRange.setAttribute("max", matriz.length);
 
 class SelectFactory {
   selected = 0;
@@ -55,8 +56,8 @@ window.onload = () => {
     renderNewTable(matriz[selection]);
   });
 
-  botao.addEventListener("click", () => {
-    selectFac.changeSelected(selectFac.selected + 1);
+  inputRange.addEventListener("input", (e) => {
+    selectFac.changeSelected(e.target.value);
   });
 
   botaoRender.addEventListener("click", () => {

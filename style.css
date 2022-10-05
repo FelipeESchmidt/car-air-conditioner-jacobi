@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,7 +15,7 @@ html, body {
     position: relative;
 }
 
-img.contorno-carro{
+img.contorno-carro {
     position: relative;
     width: 100%;
     height: 100%;
