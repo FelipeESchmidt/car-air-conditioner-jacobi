@@ -1,4 +1,4 @@
-import { jacobi } from "./gauss-seidel.js";
+import { gaussSeidel } from "./gauss-seidel.js";
 import { matriz } from "./matriz.js";
 
 let table = document.getElementById("tabela-principal");
@@ -64,7 +64,7 @@ window.onload = () => {
   });
 
   botaoRender.addEventListener("click", () => {
-    matrixUsed = jacobi(matrixUsed);
+    matrixUsed = gaussSeidel(matrixUsed);
     selectFac.callCallback();
   });
 };

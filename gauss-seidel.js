@@ -1,6 +1,6 @@
 import { isInsideCar } from "./matriz.js";
 
-export const jacobi = (matrix) => {
+export const gaussSeidel = (matrix) => {
   const newMatrix = JSON.parse(JSON.stringify(matrix));
 
   const divBy = 1 / 6;
