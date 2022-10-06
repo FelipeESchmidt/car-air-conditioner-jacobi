@@ -1,4 +1,4 @@
-import { jacobi } from "./jacobi.js";
+import { jacobi } from "./gauss-seidel.js";
 import { matriz } from "./matriz.js";
 
 let table = document.getElementById("tabela-principal");
