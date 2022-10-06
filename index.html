@@ -7,23 +7,56 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="style-colors.css" />
     <title>Trabalho 1</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <section class="main">
       <button id="render" class="button">Render</button>
-      <div class="car-table">
-        <div class="tabela-wrapper">
-          <table id="tabela-principal" class="temperaturas"></table>
-          <img class="contorno-carro" src="carro.png" alt="carro" />
+      <div class="main-container">
+        <div class="car-table">
+          <div class="tabela-wrapper">
+            <table id="tabela-principal" class="temperaturas"></table>
+            <img class="contorno-carro" src="carro.png" alt="carro" />
+          </div>
+          <input
+            class="input-range"
+            id="layer"
+            type="range"
+            min="0"
+            max="99"
+            value="0"
+          />
         </div>
-        <input
-          class="input-range"
-          id="layer"
-          type="range"
-          min="0"
-          max="99"
-          value="0"
-        />
+        <aside class="legenda">
+          <div class="legenda-itens">
+            <div class="legenda-item">
+              <span class="legenda-color v_1 o_0"></span>
+              <span class="legenda-color v_3 o_10"></span>
+              <p class="legenda-text">19° - 22°</p>
+            </div>
+            <div class="legenda-item">
+              <span class="legenda-color v_4 o_0"></span>
+              <span class="legenda-color v_6 o_10"></span>
+              <p class="legenda-text">23° - 26°</p>
+            </div>
+            <div class="legenda-item">
+              <span class="legenda-color v_7 o_0"></span>
+              <span class="legenda-color v_9 o_10"></span>
+              <p class="legenda-text">27° - 30°</p>
+            </div>
+            <div class="legenda-item">
+              <span class="legenda-color v_10 o_0"></span>
+              <span class="legenda-color v_12 o_10"></span>
+              <p class="legenda-text">31° - 34°</p>
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
 
