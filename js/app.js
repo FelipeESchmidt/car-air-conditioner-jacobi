@@ -1,7 +1,7 @@
 import { SelectFactory } from "./hooks/selectFactory.js";
 import { mountNewTable } from "./utils/tableGenerator.js";
-import { gaussSeidel } from "./gauss-seidel.js";
-import { matriz } from "./matriz.js";
+import { gaussSeidel } from "./math/gauss-seidel.js";
+import { matriz } from "./math/matriz.js";
 
 let table = document.getElementById("tabela-principal");
 let botaoRender = document.getElementById("render");
