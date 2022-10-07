@@ -70,4 +70,8 @@ aside.helper {
     flex-direction: column-reverse;
     gap: 30px;
   }
+
+  aside.helper {
+    width: 100%;
+  }
 }

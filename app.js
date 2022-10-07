@@ -3,6 +3,7 @@ import { matriz } from "./matriz.js";
 
 let table = document.getElementById("tabela-principal");
 let botaoRender = document.getElementById("render");
+let botaoReset = document.getElementById("reset");
 let inputRange = document.getElementById("layer");
 inputRange.setAttribute("max", matriz.length - 1);
 
@@ -65,6 +66,11 @@ window.onload = () => {
 
   botaoRender.addEventListener("click", () => {
     matrixUsed = gaussSeidel(matrixUsed);
+    selectFac.callCallback();
+  });
+
+  botaoReset.addEventListener("click", () => {
+    matrixUsed = matriz;
     selectFac.callCallback();
   });
 };
