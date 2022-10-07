@@ -1,3 +1,4 @@
+import { AirConditionerFactory } from "./hooks/airConditionerFactory.js";
 import { SelectFactory } from "./hooks/selectFactory.js";
 import { mountNewTable } from "./utils/tableGenerator.js";
 import { gaussSeidel } from "./math/gauss-seidel.js";
@@ -11,9 +12,14 @@ inputRange.setAttribute("max", matriz.length - 1);
 
 window.onload = () => {
   let matrixUsed = matriz;
+  let isAirOn = false;
 
   const selectFac = new SelectFactory(matriz.length, (selection) => {
     table.innerHTML = mountNewTable(matrixUsed[selection]);
+  });
+
+  const airConditionerFac = new AirConditionerFactory((on) => {
+    isAirOn = on;
   });
 
   inputRange.addEventListener("input", (e) => {
