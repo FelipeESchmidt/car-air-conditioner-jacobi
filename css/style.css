@@ -59,6 +59,7 @@ aside.helper {
   display: flex;
   flex-direction: column;
   width: 250px;
+  justify-content: space-between;
   padding: 10px 0;
   border-radius: 20px;
   box-shadow: 0px 0px 10px 4px rgb(80 80 80);

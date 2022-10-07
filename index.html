@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/style-legenda.css" />
+    <link rel="stylesheet" href="css/style-botoes.css" />
     <link rel="stylesheet" href="css/style-colors.css" />
     <title>Trabalho 1</title>
 
@@ -18,7 +19,6 @@
   </head>
   <body>
     <section class="main">
-      <button id="render" class="button">Render</button>
       <div class="main-container">
         <div class="car-table">
           <div class="tabela-wrapper">
@@ -35,7 +35,20 @@
           />
         </div>
         <aside class="helper">
-          <div class="botoes"></div>
+          <div class="botoes">
+            <p class="text botoes-titulo">Botões</p>
+            <div class="botoes-itens">
+              <button id="liga" class="botao bt-liga">Ligar AR</button>
+              <button id="desliga" class="botao bt-desligado">
+                Desligar AR
+              </button>
+              <span class="separador"></span>
+              <button id="render" class="botao bt-renderizar">
+                Renderizar
+              </button>
+              <button id="reset" class="botao bt-resetar">Resetar</button>
+            </div>
+          </div>
           <div class="legenda">
             <p class="text legenda-titulo">Legenda</p>
             <div class="legenda-itens">
