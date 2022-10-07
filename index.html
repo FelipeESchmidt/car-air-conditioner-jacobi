@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-configuracoes.css" />
     <link rel="stylesheet" href="css/style-legenda.css" />
     <link rel="stylesheet" href="css/style-botoes.css" />
     <link rel="stylesheet" href="css/style-colors.css" />
@@ -19,6 +20,7 @@
   </head>
   <body>
     <section class="main">
+      <div class="configuracao div-with-shadow"></div>
       <div class="main-container">
         <div class="car-table">
           <div class="tabela-wrapper">
@@ -34,16 +36,14 @@
             value="0"
           />
         </div>
-        <aside class="helper">
+        <aside class="helper div-with-shadow">
           <div class="botoes">
             <p class="text botoes-titulo">Botões</p>
             <div class="botoes-itens">
               <button id="liga" class="botao">Ligar AR</button>
               <button id="desliga" class="botao">Desligar AR</button>
               <span class="separador"></span>
-              <button id="render" class="botao bt-renderizar">
-                Renderizar
-              </button>
+              <button id="render" class="botao bt-renderizar">Calcular</button>
               <button id="reset" class="botao bt-resetar">Resetar</button>
             </div>
           </div>
