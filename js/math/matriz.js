@@ -15,7 +15,7 @@ const geradorDeMatriz = (numbers, x, y) => {
       if (isInsideCar(i, j)) {
         matriz[i].push(numbers[0]);
       } else {
-        matriz[i].push(12);
+        matriz[i].push(34);
       }
     }
   }
@@ -25,16 +25,16 @@ const geradorDeMatriz = (numbers, x, y) => {
 const t = { width: 100, height: 42 };
 
 export const matriz = [
-  geradorDeMatriz([12], t.height, t.width),
-  geradorDeMatriz([1], t.height, t.width),
-  geradorDeMatriz([1], t.height, t.width),
-  geradorDeMatriz([1], t.height, t.width),
-  geradorDeMatriz([1], t.height, t.width),
-  geradorDeMatriz([1], t.height, t.width),
-  geradorDeMatriz([1], t.height, t.width),
-  geradorDeMatriz([1], t.height, t.width),
-  geradorDeMatriz([1], t.height, t.width),
-  geradorDeMatriz([1], t.height, t.width),
-  geradorDeMatriz([1], t.height, t.width),
-  geradorDeMatriz([12], t.height, t.width),
+  geradorDeMatriz([34], t.height, t.width),
+  geradorDeMatriz([19], t.height, t.width),
+  geradorDeMatriz([19], t.height, t.width),
+  geradorDeMatriz([19], t.height, t.width),
+  geradorDeMatriz([19], t.height, t.width),
+  geradorDeMatriz([19], t.height, t.width),
+  geradorDeMatriz([19], t.height, t.width),
+  geradorDeMatriz([19], t.height, t.width),
+  geradorDeMatriz([19], t.height, t.width),
+  geradorDeMatriz([19], t.height, t.width),
+  geradorDeMatriz([19], t.height, t.width),
+  geradorDeMatriz([34], t.height, t.width),
 ];
