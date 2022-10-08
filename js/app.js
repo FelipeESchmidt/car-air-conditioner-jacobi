@@ -3,21 +3,21 @@ import { AirConditionerFactory } from "./hooks/airConditionerFactory.js";
 import { SelectFactory } from "./hooks/selectFactory.js";
 import { mountNewTable } from "./utils/tableGenerator.js";
 import { gaussSeidel } from "./math/gauss-seidel.js";
-import { matriz } from "./math/matriz.js";
+import { cube } from "./math/matriz.js";
 
 let table = document.getElementById("tabela-principal");
 let botaoRender = document.getElementById("render");
 let botaoReset = document.getElementById("reset");
 let inputRange = document.getElementById("layer");
-inputRange.setAttribute("max", matriz.length - 1);
+inputRange.setAttribute("max", cube.length - 1);
 
 window.onload = () => {
-  let matrixUsed = matriz;
+  let cubeUsed = cube;
   let isAirOn = false;
   let currentConfig = {};
 
-  const selectFac = new SelectFactory(matriz.length, (selection) => {
-    table.innerHTML = mountNewTable(matrixUsed[selection]);
+  const selectFac = new SelectFactory(cube.length, (selection) => {
+    table.innerHTML = mountNewTable(cubeUsed[selection]);
   });
 
   const airConfiguration = new AirConfigurationFactory((conf) => {
@@ -34,12 +34,12 @@ window.onload = () => {
   });
 
   botaoRender.addEventListener("click", () => {
-    matrixUsed = gaussSeidel(matrixUsed);
+    cubeUsed = gaussSeidel(cubeUsed);
     selectFac.callCallback();
   });
 
   botaoReset.addEventListener("click", () => {
-    matrixUsed = matriz;
+    cubeUsed = cube;
     selectFac.callCallback();
   });
 };
