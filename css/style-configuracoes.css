@@ -1,15 +1,119 @@
-div.configuracao {
+div.configuracoes {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.semi-conf {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 10px;
 }
 
-.aa {
-  min-width: 200px;
-  width: 100%;
-  max-width: 300px;
-  height: 300px;
-  border: 1px solid red;
+.configuracao-item {
+  min-width: 425px;
+  flex: 1;
+  display: flex;
+  padding: 8px;
+}
+
+.configuracao-titulo {
+  width: 35%;
+  padding: 40px 20px;
+  background-color: #515151;
+  border-radius: 20px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.configuracao-definicoes {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  border: 2px solid #515151;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.definicao {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+p.definicao-text {
+  font-size: 15px;
+}
+
+.definicao-input {
+  width: 30px;
+  text-align: center;
+}
+
+.definicao-item {
+  min-width: 90px;
+  display: flex;
+  gap: 10px;
+}
+
+.mais-menos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
+
+.menos {
+  background-color: #4fc3f7;
+}
+
+.mais {
+  background-color: #ef5350;
+}
+
+@media screen and (max-width: 600px) {
+  .configuracao-item {
+    flex-direction: column;
+    min-width: auto;
+    width: 100%;
+    padding: 2%;
+  }
+
+  .configuracao-titulo {
+    width: 100%;
+    padding: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 0;
+  }
+
+  .configuracao-definicoes {
+    width: 100%;
+    gap: 10px 0;
+    flex-direction: row;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 20px;
+  }
+
+  .definicao {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .configuracao-definicoes {
+    flex-direction: column;
+  }
+
+  .definicao {
+    justify-content: center;
+    align-items: center;
+  }
 }

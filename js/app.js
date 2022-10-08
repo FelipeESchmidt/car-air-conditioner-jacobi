@@ -1,3 +1,4 @@
+import { AirConfigurationFactory } from "./hooks/airConfigurationFactory.js";
 import { AirConditionerFactory } from "./hooks/airConditionerFactory.js";
 import { SelectFactory } from "./hooks/selectFactory.js";
 import { mountNewTable } from "./utils/tableGenerator.js";
@@ -13,12 +14,18 @@ inputRange.setAttribute("max", matriz.length - 1);
 window.onload = () => {
   let matrixUsed = matriz;
   let isAirOn = false;
+  let currentConfig = {};
 
   const selectFac = new SelectFactory(matriz.length, (selection) => {
     table.innerHTML = mountNewTable(matrixUsed[selection]);
   });
 
-  const airConditionerFac = new AirConditionerFactory((on) => {
+  const airConfiguration = new AirConfigurationFactory((conf) => {
+    currentConfig = conf;
+  });
+
+  new AirConditionerFactory((on) => {
+    airConfiguration.changeShowing(on);
     isAirOn = on;
   });
 

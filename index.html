@@ -19,8 +19,148 @@
     />
   </head>
   <body>
-    <section class="main">
-      <div class="configuracao div-with-shadow"></div>
+    <section class="main container">
+      <div id="configuracoes" class="hide configuracoes div-with-shadow">
+        <div class="semi-conf">
+          <div id="ar-frontal" class="configuracao-item">
+            <p class="configuracao-titulo text">Ar Frontal</p>
+            <div class="configuracao-definicoes">
+              <div class="definicao">
+                <p class="definicao-text text">Temperatura (°C)</p>
+                <div class="definicao-item">
+                  <div data-type="menos-temp" class="mais-menos menos">-</div>
+                  <input
+                    type="text"
+                    class="definicao-input input"
+                    disabled
+                    value="19°C"
+                    data-type="temp"
+                  />
+                  <div data-type="mais-temp" class="mais-menos mais">+</div>
+                </div>
+              </div>
+              <div class="definicao">
+                <p class="definicao-text text">Intensidade</p>
+                <div class="definicao-item">
+                  <div data-type="menos-int" class="mais-menos menos">-</div>
+                  <input
+                    type="text"
+                    class="definicao-input input"
+                    disabled
+                    value="0"
+                    data-type="intensidade"
+                  />
+                  <div data-type="mais-int" class="mais-menos mais">+</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="ar-traseiro" class="configuracao-item">
+            <p class="configuracao-titulo text">Ar Traseiro</p>
+            <div class="configuracao-definicoes">
+              <div class="definicao">
+                <p class="definicao-text text">Temperatura (°C)</p>
+                <div class="definicao-item">
+                  <div data-type="menos-temp" class="mais-menos menos">-</div>
+                  <input
+                    type="text"
+                    class="definicao-input input"
+                    disabled
+                    value="19°C"
+                    data-type="temp"
+                  />
+                  <div data-type="mais-temp" class="mais-menos mais">+</div>
+                </div>
+              </div>
+              <div class="definicao">
+                <p class="definicao-text text">Intensidade</p>
+                <div class="definicao-item">
+                  <div data-type="menos-int" class="mais-menos menos">-</div>
+                  <input
+                    type="text"
+                    class="definicao-input input"
+                    disabled
+                    value="0"
+                    data-type="intensidade"
+                  />
+                  <div data-type="mais-int" class="mais-menos mais">+</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="semi-conf">
+          <div id="ar-superior" class="configuracao-item">
+            <p class="configuracao-titulo text">Ar Superior</p>
+            <div class="configuracao-definicoes">
+              <div class="definicao">
+                <p class="definicao-text text">Temperatura (°C)</p>
+                <div class="definicao-item">
+                  <div data-type="menos-temp" class="mais-menos menos">-</div>
+                  <input
+                    type="text"
+                    class="definicao-input input"
+                    disabled
+                    value="19°C"
+                    data-type="temp"
+                  />
+                  <div data-type="mais-temp" class="mais-menos mais">+</div>
+                </div>
+              </div>
+              <div class="definicao">
+                <p class="definicao-text text">Intensidade</p>
+                <div class="definicao-item">
+                  <div data-type="menos-int" class="mais-menos menos">-</div>
+                  <input
+                    type="text"
+                    class="definicao-input input"
+                    disabled
+                    value="0"
+                    data-type="intensidade"
+                  />
+                  <div data-type="mais-int" class="mais-menos mais">+</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="ar-inferior" class="configuracao-item">
+            <p class="configuracao-titulo text">Ar Inferior</p>
+            <div class="configuracao-definicoes">
+              <div class="definicao">
+                <p class="definicao-text text">Temperatura (°C)</p>
+                <div class="definicao-item">
+                  <div data-type="menos-temp" class="mais-menos menos">-</div>
+                  <input
+                    type="text"
+                    class="definicao-input input"
+                    disabled
+                    value="19°C"
+                    data-type="temp"
+                  />
+                  <div data-type="mais-temp" class="mais-menos mais">+</div>
+                </div>
+              </div>
+              <div class="definicao">
+                <p class="definicao-text text">Intensidade</p>
+                <div class="definicao-item">
+                  <div data-type="menos-int" class="mais-menos menos">-</div>
+                  <input
+                    type="text"
+                    class="definicao-input input"
+                    disabled
+                    value="0"
+                    data-type="intensidade"
+                  />
+                  <div data-type="mais-int" class="mais-menos mais">+</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- configuracoes -->
+
       <div class="main-container">
         <div class="car-table">
           <div class="tabela-wrapper">
@@ -34,6 +174,7 @@
             min="0"
             max="99"
             value="0"
+            data-type="intensidade"
           />
         </div>
         <aside class="helper div-with-shadow">

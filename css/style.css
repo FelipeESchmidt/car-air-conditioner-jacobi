@@ -10,6 +10,11 @@ body {
   background-color: #414141;
 }
 
+.container {
+  max-width: 1650px;
+  margin: 0 auto;
+}
+
 p.text {
   font-size: 20px;
   color: white;
@@ -19,7 +24,7 @@ p.text {
   display: flex;
   flex-direction: column;
   gap: 50px;
-  padding: 50px 10%;
+  padding: 20px 10%;
 }
 
 .main-container {
@@ -71,6 +76,35 @@ aside.helper {
   padding: 10px 0;
 }
 
+input.input {
+  background-color: unset;
+  border: 0;
+  outline: 0;
+  color: white;
+}
+
+@keyframes hide-animation {
+  from {
+    height: auto;
+  }
+  to {
+    height: 0;
+  }
+}
+
+.hide {
+  font-size: 0;
+  padding: 0;
+  margin: 0;
+  background-color: none;
+  box-shadow: none;
+  overflow: hidden;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.26s ease;
+  animation: hide-animation 0.26s forwards;
+}
+
 @media screen and (max-width: 900px) {
   .main-container {
     flex-direction: column-reverse;
@@ -79,5 +113,12 @@ aside.helper {
 
   aside.helper {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .main {
+    gap: 20px;
+    padding: 10px 2%;
   }
 }
