@@ -4,6 +4,7 @@ import { SelectFactory } from "./hooks/selectFactory.js";
 import { mountNewTable } from "./utils/tableGenerator.js";
 import { gaussSeidel } from "./math/gauss-seidel.js";
 import { cube } from "./math/matriz.js";
+import { applyAir } from "./math/airConditioner.js";
 
 let table = document.getElementById("tabela-principal");
 let botaoRender = document.getElementById("render");
@@ -22,6 +23,8 @@ window.onload = () => {
 
   const airConfiguration = new AirConfigurationFactory((conf) => {
     currentConfig = conf;
+    cubeUsed = applyAir(conf, cubeUsed);
+    selectFac.callCallback();
   });
 
   new AirConditionerFactory((on) => {
@@ -35,6 +38,7 @@ window.onload = () => {
 
   botaoRender.addEventListener("click", () => {
     cubeUsed = gaussSeidel(cubeUsed);
+    cubeUsed = applyAir(currentConfig, cubeUsed);
     selectFac.callCallback();
   });
 

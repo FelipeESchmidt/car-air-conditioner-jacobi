@@ -21,6 +21,7 @@ export class AirConfigurationFactory {
     const method = newValue ? "remove" : "add";
     document.getElementById("configuracoes").classList[method]("hide");
     this.showing = newValue;
+    this.changeCallback(this.configs);
   }
 
   increaseTemp(id) {
