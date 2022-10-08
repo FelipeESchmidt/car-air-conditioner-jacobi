@@ -1,22 +1,19 @@
+const mountFirstIntensityPositions = (baseX, baseY, incX, incY) => {
+  return [
+    { x: baseX, y: baseY, z: 5 },
+    { x: baseX + incX, y: baseY, z: 5 },
+    { x: baseX, y: baseY + incY, z: 5 },
+    { x: baseX + incX, y: baseY + incY, z: 5 },
+    { x: baseX + incX, y: baseY + incY, z: 5 },
+  ];
+}
+
+const mountAirPosition = (baseX, baseY, incX, incY) => {
+  return [{ intensity: 1, positions: mountFirstIntensityPositions(baseX, baseY, incX, incY) }]
+}
+
 const airPositions = {
-  front: [
-    {
-      intensity: 1,
-      positions: [],
-    },
-    {
-      intensity: 2,
-      positions: [],
-    },
-    {
-      intensity: 3,
-      positions: [],
-    },
-    {
-      intensity: 4,
-      positions: [],
-    },
-  ],
+  front: mountAirPosition(16, 26, 1, 1),
 };
 
 const applyFrontAir = ({ temp, intensity }, cube) => {
