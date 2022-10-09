@@ -38,7 +38,7 @@ window.onload = () => {
 
   botaoRender.addEventListener("click", () => {
     cubeUsed = gaussSeidel(cubeUsed);
-    if(isAirOn){
+    if (isAirOn) {
       cubeUsed = applyAir(currentConfig, cubeUsed);
     }
     selectFac.callCallback();
@@ -46,6 +46,9 @@ window.onload = () => {
 
   botaoReset.addEventListener("click", () => {
     cubeUsed = cube;
+    if (isAirOn) {
+      cubeUsed = applyAir(currentConfig, cubeUsed);
+    }
     selectFac.callCallback();
   });
 };

@@ -1,8 +1,8 @@
 const configurations = {
-  "ar-frontal": { temp: 19, intensity: 0 },
-  "ar-traseiro": { temp: 19, intensity: 0 },
-  "ar-superior": { temp: 19, intensity: 0 },
-  "ar-inferior": { temp: 19, intensity: 0 },
+  "ar-frontal": { temp: 19, intensity: 0, type: "front" },
+  "ar-traseiro": { temp: 19, intensity: 0, type: "back" },
+  "ar-superior": { temp: 19, intensity: 0, type: "up" },
+  "ar-inferior": { temp: 19, intensity: 0, type: "down" },
 };
 
 export class AirConfigurationFactory {
