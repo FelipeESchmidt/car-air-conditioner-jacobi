@@ -1,3 +1,5 @@
+const basePlane = 5;
+
 const mountLine = (initialXYZ, inc, direction, incDiff = 0) => ({
   0: { ...initialXYZ },
   1: { ...initialXYZ, [inc]: initialXYZ[inc] + (3 - incDiff) * direction },
@@ -34,29 +36,29 @@ const mountColumns = (initialXYZ, inc, lateral, direction) => {
   return lines;
 };
 
-const mountPosition = (initialXYZ, inc, lateral, direction) => [
+const mountPosition = (initialXYZ, inc, lateral, direction, planes) => [
   mountLine(initialXYZ, inc, direction),
   ...mountColumns(initialXYZ, inc, lateral, direction),
 ];
 
 const airInfo = {
   front: {
-    positions: mountPosition({ x: 16, y: 27 }, "y", "x", 1),
+    positions: mountPosition({ x: 16, y: 27, z: basePlane }, "y", "x", 1),
     validateFor: (n, v) => n <= v,
     nextPos: (n) => ++n,
   },
   back: {
-    positions: mountPosition({ x: 16, y: 81 }, "y", "x", -1),
+    positions: mountPosition({ x: 16, y: 81, z: basePlane }, "y", "x", -1),
     validateFor: (n, v) => n >= v,
     nextPos: (n) => --n,
   },
   up: {
-    positions: mountPosition({ x: 3, y: 54 }, "x", "y", 1),
+    positions: mountPosition({ x: 3, y: 54, z: basePlane }, "x", "y", 1),
     validateFor: (n, v) => n <= v,
     nextPos: (n) => ++n,
   },
   down: {
-    positions: mountPosition({ x: 33, y: 54 }, "x", "y", -1),
+    positions: mountPosition({ x: 33, y: 54, z: basePlane }, "x", "y", -1),
     validateFor: (n, v) => n >= v,
     nextPos: (n) => --n,
   },
@@ -76,7 +78,9 @@ const applyAirType = (configs, cube) => {
         validateFor(j, position[configs.intensity].y);
         j = nextPos(j)
       ) {
-        cube[5][i][j] = configs.temp;
+        for (let k = 1; k < 10; k++) {
+          cube[k][i][j] = configs.temp;
+        }
       }
     }
   });
