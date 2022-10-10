@@ -13,15 +13,24 @@ export class AirConfigurationFactory {
 
   constructor(callback) {
     this.changeCallback = callback;
-    this.configs = configurations;
+    this.configs = JSON.parse(JSON.stringify(configurations));
     this.bindFunctions();
   }
 
   changeShowing(newValue) {
+    if (!newValue) this.reset();
     const method = newValue ? "remove" : "add";
     document.getElementById("configuracoes").classList[method]("hide");
     this.showing = newValue;
     this.changeCallback(this.configs);
+  }
+
+  reset() {
+    this.configs = JSON.parse(JSON.stringify(configurations));
+    Object.keys(this.configs).map((id) => {
+      this.changeTemp(id, configurations[id].temp);
+      this.changeIntensity(id, configurations[id].intensity);
+    });
   }
 
   increaseTemp(id) {
