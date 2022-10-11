@@ -42,6 +42,7 @@ div.configuracoes {
   display: flex;
   justify-content: space-between;
   gap: 5px;
+  margin: auto 0;
 }
 
 p.definicao-text {
@@ -80,6 +81,10 @@ p.definicao-text {
 }
 
 @media screen and (max-width: 600px) {
+  .semi-conf {
+    flex-direction: column;
+  }
+
   .configuracao-item {
     flex-direction: column;
     min-width: auto;

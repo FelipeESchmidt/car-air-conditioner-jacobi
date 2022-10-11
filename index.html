@@ -20,7 +20,54 @@
   </head>
   <body>
     <section class="main container">
-      <div id="configuracoes" class="hide configuracoes div-with-shadow">
+      <div
+        id="configuracoes-programa"
+        class="hide configuracoes div-with-shadow"
+      >
+        <div class="semi-conf">
+          <div id="temp-externa" class="configuracao-item">
+            <p class="configuracao-titulo text">Externo</p>
+            <div class="configuracao-definicoes">
+              <div class="definicao">
+                <p class="definicao-text text">Temperatura (°C)</p>
+                <div class="definicao-item">
+                  <div data-type="menos-temp" class="mais-menos menos">-</div>
+                  <input
+                    type="text"
+                    class="definicao-input input"
+                    disabled
+                    value="34°C"
+                    data-type="temp"
+                  />
+                  <div data-type="mais-temp" class="mais-menos mais">+</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="temp-interna" class="configuracao-item">
+            <p class="configuracao-titulo text">Interno</p>
+            <div class="configuracao-definicoes">
+              <div class="definicao">
+                <p class="definicao-text text">Temperatura (°C)</p>
+                <div class="definicao-item">
+                  <div data-type="menos-temp" class="mais-menos menos">-</div>
+                  <input
+                    type="text"
+                    class="definicao-input input"
+                    disabled
+                    value="19°C"
+                    data-type="temp"
+                  />
+                  <div data-type="mais-temp" class="mais-menos mais">+</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- configuracoes programa -->
+
+      <div id="configuracoes-ar" class="hide configuracoes div-with-shadow">
         <div class="semi-conf">
           <div id="ar-frontal" class="configuracao-item">
             <p class="configuracao-titulo text">Ar Frontal</p>
@@ -159,7 +206,7 @@
           </div>
         </div>
       </div>
-      <!-- configuracoes -->
+      <!-- configuracoes ar -->
 
       <div class="main-container">
         <div class="car-table">
@@ -183,6 +230,8 @@
             <div class="botoes-itens">
               <button id="liga" class="botao">Ligar AR</button>
               <button id="desliga" class="botao">Desligar AR</button>
+              <span class="separador"></span>
+              <button id="configura" class="botao">Configurar</button>
               <span class="separador"></span>
               <button id="render" class="botao bt-renderizar">Calcular</button>
               <button id="reset" class="botao bt-resetar">Resetar</button>
