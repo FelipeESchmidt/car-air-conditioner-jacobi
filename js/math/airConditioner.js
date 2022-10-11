@@ -79,7 +79,9 @@ const applyAirType = (configs, cube) => {
         j = nextPos(j)
       ) {
         for (let k = 1; k < 10; k++) {
-          cube[k][i][j] = configs.temp;
+          const long = Math.abs(i - Math.abs(position[0].x) + (j - Math.abs(position[0].y)));
+          const tempDiff = long / configs.intensity;
+          cube[k][i][j] = configs.temp + tempDiff;
         }
       }
     }
