@@ -24,16 +24,12 @@ const geradorDeMatriz = (numbers, x, y) => {
 
 const t = { width: 100, height: 42 };
 
-export const cube = [
-  geradorDeMatriz([34, 34], t.height, t.width),
-  geradorDeMatriz([19, 34], t.height, t.width),
-  geradorDeMatriz([19, 34], t.height, t.width),
-  geradorDeMatriz([19, 34], t.height, t.width),
-  geradorDeMatriz([19, 34], t.height, t.width),
-  geradorDeMatriz([19, 34], t.height, t.width),
-  geradorDeMatriz([19, 34], t.height, t.width),
-  geradorDeMatriz([19, 34], t.height, t.width),
-  geradorDeMatriz([19, 34], t.height, t.width),
-  geradorDeMatriz([19, 34], t.height, t.width),
-  geradorDeMatriz([34, 34], t.height, t.width),
-];
+export const mountCube = (externalTemp, internalTemp, l = 11) => {
+  const c = [];
+  for (let i = 0; i < l; i++) {
+    c.push(geradorDeMatriz([externalTemp, externalTemp], t.height, t.width));
+  }
+  return c;
+}
+
+export const cube = mountCube(34, 19);
