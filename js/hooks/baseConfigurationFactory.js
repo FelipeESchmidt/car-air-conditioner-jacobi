@@ -1,11 +1,12 @@
 const configurations = {
-  "temp-interna": { temp: 19 }, "temp-externa": { temp: 34 },
+  "temp-interna": { temp: 19 },
+  "temp-externa": { temp: 34 },
 };
 
 export class BaseConfigurationFactory {
   showing = false;
   limits = { temp: { min: 19, max: 34 } };
-  changeCallback = () => { };
+  changeCallback = () => {};
   configs = {};
 
   constructor(callback) {
@@ -15,7 +16,6 @@ export class BaseConfigurationFactory {
   }
 
   changeShowing(newValue) {
-    if (!newValue) this.reset();
     const method = newValue ? "remove" : "add";
     document.getElementById("configuracoes-programa").classList[method]("hide");
     this.showing = newValue;

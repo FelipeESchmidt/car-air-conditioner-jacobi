@@ -1,8 +1,11 @@
 import { BaseConfigurationFactory } from "./hooks/baseConfigurationFactory.js";
 import { AirConfigurationFactory } from "./hooks/airConfigurationFactory.js";
 import { AirConditionerFactory } from "./hooks/airConditionerFactory.js";
+import { ProgramFactory } from "./hooks/programFactory.js";
 import { SelectFactory } from "./hooks/selectFactory.js";
+
 import { mountNewTable } from "./utils/tableGenerator.js";
+
 import { gaussSeidel } from "./math/gauss-seidel.js";
 import { cube, mountCube } from "./math/matriz.js";
 import { applyAir } from "./math/airConditioner.js";
@@ -35,9 +38,13 @@ window.onload = () => {
     selectFac.callCallback();
   });
 
-  new AirConditionerFactory((on) => {
+  const airConditioner = new AirConditionerFactory((on) => {
     airConfiguration.changeShowing(on);
     isAirOn = on;
+  });
+
+  const programFac = new ProgramFactory((on) => {
+    baseConfiguration.changeShowing(on);
   });
 
   inputRange.addEventListener("input", (e) => {
@@ -45,16 +52,19 @@ window.onload = () => {
   });
 
   botaoRender.addEventListener("click", () => {
-    cubeUsed = gaussSeidel(cubeUsed);
     if (isAirOn) {
       cubeUsed = applyAir(currentAirConfig, cubeUsed);
     }
+    cubeUsed = gaussSeidel(cubeUsed);
     selectFac.callCallback();
   });
 
   botaoReset.addEventListener("click", () => {
     cubeUsed = cube;
     airConfiguration.reset();
+    airConditioner.powerButton(false);
+    baseConfiguration.reset();
+    programFac.powerButton(false);
     selectFac.callCallback();
   });
 };

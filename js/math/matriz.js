@@ -26,10 +26,12 @@ const t = { width: 100, height: 42 };
 
 export const mountCube = (externalTemp, internalTemp, l = 11) => {
   const c = [];
-  for (let i = 0; i < l; i++) {
-    c.push(geradorDeMatriz([externalTemp, externalTemp], t.height, t.width));
+  c.push(geradorDeMatriz([externalTemp, externalTemp], t.height, t.width));
+  for (let i = 1; i < l - 1; i++) {
+    c.push(geradorDeMatriz([internalTemp, externalTemp], t.height, t.width));
   }
+  c.push(geradorDeMatriz([externalTemp, externalTemp], t.height, t.width));
   return c;
-}
+};
 
 export const cube = mountCube(34, 19);
