@@ -19,7 +19,6 @@ export class BaseConfigurationFactory {
     const method = newValue ? "remove" : "add";
     document.getElementById("configuracoes-programa").classList[method]("hide");
     this.showing = newValue;
-    this.changeCallback(this.configs);
   }
 
   reset() {

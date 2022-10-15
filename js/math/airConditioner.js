@@ -65,6 +65,7 @@ const airInfo = {
 };
 
 const applyAirType = (configs, cube) => {
+  if (!configs) return;
   const { positions, validateFor, nextPos } = airInfo[configs.type];
   positions.forEach((position) => {
     if (!configs.intensity) return;
