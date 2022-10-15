@@ -28,7 +28,11 @@ window.onload = () => {
 
   const baseConfiguration = new BaseConfigurationFactory((conf) => {
     currentBaseConfig = conf;
-    cubeUsed = mountCube(conf["temp-externa"].temp, conf["temp-interna"].temp);
+    const newCube = mountCube(
+      conf["temp-externa"].temp,
+      conf["temp-interna"].temp
+    );
+    cubeUsed = applyAir(currentAirConfig, newCube);
     selectFac.callCallback();
   });
 
