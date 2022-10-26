@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-configuracoes.css" />
+    <link rel="stylesheet" href="css/style-legenda.css" />
+    <link rel="stylesheet" href="css/style-botoes.css" />
+    <link rel="stylesheet" href="css/style-colors.css" />
+    <title>Gauss Seidel - Simulador de Temperatura</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="main container">
+      <div
+        id="configuracoes-programa"
+        class="hide configuracoes div-with-shadow"
+      >
+        <div class="semi-conf">
+          <div id="temp-externa" class="configuracao-item">
+            <p class="configuracao-titulo text">Externo</p>
+            <div class="configuracao-definicoes">
+              <div class="definicao">
+                <p class="definicao-text text">Temperatura (°C)</p>
+                <div class="definicao-item">
+                  <div data-type="menos-temp" class="mais-menos menos">-</div>
+                  <input
+                    type="text"
+                    class="definicao-input input"
+                    disabled
+                    value="34°C"
+                    data-type="temp"
+                  />
+                  <div data-type="mais-temp" class="mais-menos mais">+</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="temp-interna" class="configuracao-item">
+            <p class="configuracao-titulo text">Interno</p>
+            <div class="configuracao-definicoes">
+              <div class="definicao">
+                <p class="definicao-text text">Temperatura (°C)</p>
+                <div class="definicao-item">
+                  <div data-type="menos-temp" class="mais-menos menos">-</div>
+                  <input
+                    type="text"
+                    class="definicao-input input"
+                    disabled
+                    value="19°C"
+                    data-type="temp"
+                  />
+                  <div data-type="mais-temp" class="mais-menos mais">+</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- configuracoes programa -->
+
+      <div id="configuracoes-ar" class="hide configuracoes div-with-shadow">
+        <div class="semi-conf">
+          <div id="ar-frontal" class="configuracao-item">
+            <p class="configuracao-titulo text">Ar Frontal</p>
+            <div class="configuracao-definicoes">
+              <div class="definicao">
+                <p class="definicao-text text">Temperatura (°C)</p>
+                <div class="definicao-item">
+                  <div data-type="menos-temp" class="mais-menos menos">-</div>
+                  <input
+                    type="text"
+                    class="definicao-input input"
+                    disabled
+                    value="19°C"
+                    data-type="temp"
+                  />
+                  <div data-type="mais-temp" class="mais-menos mais">+</div>
+                </div>
+              </div>
+              <div class="definicao">
+                <p class="definicao-text text">Intensidade</p>
+                <div class="definicao-item">
+                  <div data-type="menos-int" class="mais-menos menos">-</div>
+                  <input
+                    type="text"
+                    class="definicao-input input"
+                    disabled
+                    value="0"
+                    data-type="intensidade"
+                  />
+                  <div data-type="mais-int" class="mais-menos mais">+</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="ar-traseiro" class="configuracao-item">
+            <p class="configuracao-titulo text">Ar Traseiro</p>
+            <div class="configuracao-definicoes">
+              <div class="definicao">
+                <p class="definicao-text text">Temperatura (°C)</p>
+                <div class="definicao-item">
+                  <div data-type="menos-temp" class="mais-menos menos">-</div>
+                  <input
+                    type="text"
+                    class="definicao-input input"
+                    disabled
+                    value="19°C"
+                    data-type="temp"
+                  />
+                  <div data-type="mais-temp" class="mais-menos mais">+</div>
+                </div>
+              </div>
+              <div class="definicao">
+                <p class="definicao-text text">Intensidade</p>
+                <div class="definicao-item">
+                  <div data-type="menos-int" class="mais-menos menos">-</div>
+                  <input
+                    type="text"
+                    class="definicao-input input"
+                    disabled
+                    value="0"
+                    data-type="intensidade"
+                  />
+                  <div data-type="mais-int" class="mais-menos mais">+</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="semi-conf">
+          <div id="ar-superior" class="configuracao-item">
+            <p class="configuracao-titulo text">Ar Superior</p>
+            <div class="configuracao-definicoes">
+              <div class="definicao">
+                <p class="definicao-text text">Temperatura (°C)</p>
+                <div class="definicao-item">
+                  <div data-type="menos-temp" class="mais-menos menos">-</div>
+                  <input
+                    type="text"
+                    class="definicao-input input"
+                    disabled
+                    value="19°C"
+                    data-type="temp"
+                  />
+                  <div data-type="mais-temp" class="mais-menos mais">+</div>
+                </div>
+              </div>
+              <div class="definicao">
+                <p class="definicao-text text">Intensidade</p>
+                <div class="definicao-item">
+                  <div data-type="menos-int" class="mais-menos menos">-</div>
+                  <input
+                    type="text"
+                    class="definicao-input input"
+                    disabled
+                    value="0"
+                    data-type="intensidade"
+                  />
+                  <div data-type="mais-int" class="mais-menos mais">+</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="ar-inferior" class="configuracao-item">
+            <p class="configuracao-titulo text">Ar Inferior</p>
+            <div class="configuracao-definicoes">
+              <div class="definicao">
+                <p class="definicao-text text">Temperatura (°C)</p>
+                <div class="definicao-item">
+                  <div data-type="menos-temp" class="mais-menos menos">-</div>
+                  <input
+                    type="text"
+                    class="definicao-input input"
+                    disabled
+                    value="19°C"
+                    data-type="temp"
+                  />
+                  <div data-type="mais-temp" class="mais-menos mais">+</div>
+                </div>
+              </div>
+              <div class="definicao">
+                <p class="definicao-text text">Intensidade</p>
+                <div class="definicao-item">
+                  <div data-type="menos-int" class="mais-menos menos">-</div>
+                  <input
+                    type="text"
+                    class="definicao-input input"
+                    disabled
+                    value="0"
+                    data-type="intensidade"
+                  />
+                  <div data-type="mais-int" class="mais-menos mais">+</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- configuracoes ar -->
+
+      <div class="main-container">
+        <div class="car-table">
+          <div class="tabela-wrapper">
+            <table id="tabela-principal" class="temperaturas"></table>
+            <img class="contorno-carro" src="images/carro.png" alt="carro" />
+          </div>
+          <input
+            class="input-range"
+            id="layer"
+            type="range"
+            min="0"
+            max="99"
+            value="0"
+            data-type="intensidade"
+          />
+        </div>
+        <aside class="helper div-with-shadow">
+          <div class="botoes">
+            <p class="text botoes-titulo">Botões</p>
+            <div class="botoes-itens">
+              <button id="liga" class="botao">Ligar AR</button>
+              <button id="desliga" class="botao">Desligar AR</button>
+              <span class="separador"></span>
+              <button id="configura" class="botao">Configurar</button>
+              <span class="separador"></span>
+              <button id="render" class="botao bt-renderizar">Calcular</button>
+              <button id="reset" class="botao bt-resetar">Resetar</button>
+            </div>
+          </div>
+
+          <div class="legenda">
+            <p class="text legenda-titulo">Legenda</p>
+            <div class="legenda-itens">
+              <div class="legenda-item">
+                <span class="legenda-color v_19 o_0"></span>
+                <p class="text legenda-text">19° - 22°</p>
+                <span class="legenda-color v_22 o_10"></span>
+              </div>
+              <div class="legenda-item">
+                <span class="legenda-color v_23 o_0"></span>
+                <p class="text legenda-text">23° - 26°</p>
+                <span class="legenda-color v_26 o_10"></span>
+              </div>
+              <div class="legenda-item">
+                <span class="legenda-color v_27 o_0"></span>
+                <p class="text legenda-text">27° - 30°</p>
+                <span class="legenda-color v_30 o_10"></span>
+              </div>
+              <div class="legenda-item">
+                <span class="legenda-color v_31 o_0"></span>
+                <p class="text legenda-text">31° - 34°</p>
+                <span class="legenda-color v_34 o_10"></span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>
