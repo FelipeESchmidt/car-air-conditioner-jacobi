@@ -46,23 +46,29 @@ const airInfo = {
     positions: mountPosition({ x: 16, y: 27, z: basePlane }, "y", "x", 1),
     validateFor: (n, v) => n <= v,
     nextPos: (n) => ++n,
+    direction: { x: 0, y: 1 },
   },
   back: {
     positions: mountPosition({ x: 16, y: 81, z: basePlane }, "y", "x", -1),
     validateFor: (n, v) => n >= v,
     nextPos: (n) => --n,
+    direction: { x: 0, y: -1 },
   },
   up: {
     positions: mountPosition({ x: 3, y: 54, z: basePlane }, "x", "y", 1),
     validateFor: (n, v) => n <= v,
     nextPos: (n) => ++n,
+    direction: { x: 1, y: 0 },
   },
   down: {
     positions: mountPosition({ x: 33, y: 54, z: basePlane }, "x", "y", -1),
     validateFor: (n, v) => n >= v,
     nextPos: (n) => --n,
+    direction: { x: -1, y: 0 },
   },
 };
+
+let appliedPositions = [];
 
 const applyAirType = (configs, cube) => {
   if (!configs) return;
@@ -85,10 +91,45 @@ const applyAirType = (configs, cube) => {
           );
           const tempDiff = long / configs.intensity;
           cube[k][i][j] = configs.temp + tempDiff;
+          appliedPositions.push({
+            x: i,
+            y: j,
+            z: k,
+            temp: cube[k][i][j],
+            type: configs.type,
+            strong: 10,
+          });
         }
       }
     }
   });
+};
+
+const applyAirVentilation = (cube) => {
+  appliedPositions = appliedPositions.map((position) => {
+    let { x, y, z, temp, type, strong } = position;
+    strong--;
+
+    const { x: incX, y: incY } = airInfo[type].direction;
+
+    x += incX;
+    y += incY;
+
+    temp = (cube[z][x][y] + temp) / 2;
+
+    cube[z][x][y] = temp;
+
+    return {
+      x,
+      y,
+      z,
+      temp,
+      type,
+      strong,
+    };
+  });
+
+  appliedPositions = appliedPositions.filter((position) => position.strong > 0);
 };
 
 export const applyAir = (configs, cube) => {
@@ -99,5 +140,11 @@ export const applyAir = (configs, cube) => {
   applyAirType(configs["ar-superior"], newCube);
   applyAirType(configs["ar-inferior"], newCube);
 
+  applyAirVentilation(newCube);
+
   return newCube;
+};
+
+export const resetAir = () => {
+  appliedPositions = [];
 };

@@ -8,7 +8,7 @@ import { mountNewTable } from "./utils/tableGenerator.js";
 
 import { gaussSeidel } from "./math/gauss-seidel.js";
 import { cube, mountCube } from "./math/matriz.js";
-import { applyAir } from "./math/airConditioner.js";
+import { applyAir, resetAir } from "./math/airConditioner.js";
 
 let table = document.getElementById("tabela-principal");
 let botaoRender = document.getElementById("render");
@@ -65,6 +65,7 @@ window.onload = () => {
 
   botaoReset.addEventListener("click", () => {
     cubeUsed = cube;
+    resetAir();
     airConfiguration.reset();
     airConditioner.powerButton(false);
     baseConfiguration.reset();
