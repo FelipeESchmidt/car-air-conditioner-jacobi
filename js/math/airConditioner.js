@@ -47,24 +47,28 @@ const airInfo = {
     validateFor: (n, v) => n <= v,
     nextPos: (n) => ++n,
     direction: { x: 0, y: 1 },
+    airStrong: 14,
   },
   back: {
     positions: mountPosition({ x: 16, y: 81, z: basePlane }, "y", "x", -1),
     validateFor: (n, v) => n >= v,
     nextPos: (n) => --n,
     direction: { x: 0, y: -1 },
+    airStrong: 10,
   },
   up: {
     positions: mountPosition({ x: 3, y: 54, z: basePlane }, "x", "y", 1),
     validateFor: (n, v) => n <= v,
     nextPos: (n) => ++n,
     direction: { x: 1, y: 0 },
+    airStrong: 8,
   },
   down: {
     positions: mountPosition({ x: 33, y: 54, z: basePlane }, "x", "y", -1),
     validateFor: (n, v) => n >= v,
     nextPos: (n) => --n,
     direction: { x: -1, y: 0 },
+    airStrong: 8,
   },
 };
 
@@ -97,7 +101,7 @@ const applyAirType = (configs, cube) => {
             z: k,
             temp: cube[k][i][j],
             type: configs.type,
-            strong: 10,
+            strong: airInfo[configs.type].airStrong,
           });
         }
       }
